@@ -1,10 +1,42 @@
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { getGamesByGenre } from '../api/rawg'
+import ProductCard from '../components/ProductCard'
 
 const CategoryPage = () => {
-    let { genre } = useParams()
+    const { genre } = useParams()
+    
+    const [games, setGames] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        const fetchGames = async () => {
+            try {
+                setLoading(true)
+                const results = await getGamesByGenre(genre)
+                setGames(results)
+            } catch(err) {
+                setError('Failed to load games')
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchGames()
+    }, [genre])
+
+    if (loading) return <div>Loading...</div>
+    if (error) return <div>{ error }</div>
+
     return (
         <div>
-            {genre}
+            <h1 style={{ textTransform: 'capitalize'}}>{genre} Games</h1>
+            {games.map(game => (
+                <ProductCard
+                    key={game.id}
+                    game={game}
+                />
+            ))}
         </div>
     )
 }
