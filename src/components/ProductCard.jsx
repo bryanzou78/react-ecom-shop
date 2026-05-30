@@ -1,11 +1,13 @@
 const ProductCard = ({ game }) => {
     return (
-        <div>
+        <div className='product-card'>
             <img src={game.background_image} alt={game.name} />
-            <h3>{game.name}</h3>
-            <p>Rating: {game.rating}</p>
-            <p>Metacritic: {game.metacritic}</p>
-            <p>Release Date: {game.released}</p>
+            <div className='product-card-info'>
+                <h3>{game.name}</h3>
+                <p>Rating: {game.rating}</p>
+                <p>Metacritic: {game.metacritic}</p>
+                <p>Release Date: {game.released}</p>
+            </div>
         </div>
     )
 }

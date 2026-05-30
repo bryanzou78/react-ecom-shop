@@ -29,14 +29,16 @@ const CategoryPage = () => {
     if (error) return <div>{ error }</div>
 
     return (
-        <div>
+        <div className='category-page'>
             <h1 style={{ textTransform: 'capitalize'}}>{genre} Games</h1>
-            {games.map(game => (
-                <ProductCard
-                    key={game.id}
-                    game={game}
-                />
-            ))}
+            <div className='product-grid'>
+                {games.map(game => (
+                    <ProductCard
+                        key={game.id}
+                        game={game}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

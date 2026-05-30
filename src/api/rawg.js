@@ -12,3 +12,18 @@ export const getGamesByGenre = async (genre) => {
         return []
     }
 }
+
+export const getGamesByIds = async (ids) => {
+    try {
+        const results = await Promise.allSettled(
+            ids.map(id => fetch(`${BASE_URL}/games/${id}?key=${API_KEY}`).then(res => res.json()))
+        )
+        const games = results
+        .filter(result => result.status === 'fulfilled')
+        .map(result => result.value)
+        return games
+    } catch(error) {
+        console.error('Error fetching games:', error)
+        return []
+    }
+}

@@ -2,7 +2,6 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CategoryPage from './pages/CategoryPage'
 import CartPage from './pages/CartPage'
-import './index.css'
 
 const router = createBrowserRouter([
   {
