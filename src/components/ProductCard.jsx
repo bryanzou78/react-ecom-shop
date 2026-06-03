@@ -1,4 +1,4 @@
-const ProductCard = ({ game }) => {
+const ProductCard = ({ game , price}) => {
     return (
         <div className='product-card'>
             <img src={game.background_image} alt={game.name} />
@@ -7,6 +7,7 @@ const ProductCard = ({ game }) => {
                 <p>Rating: {game.rating}</p>
                 <p>Metacritic: {game.metacritic}</p>
                 <p>Release Date: {game.released}</p>
+                <p>${price}</p>
             </div>
         </div>
     )

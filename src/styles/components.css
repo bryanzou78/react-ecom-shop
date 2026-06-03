@@ -1,14 +1,3 @@
-:root {
-    --background-color: #f8f8f8;
-    --card-background: #ffffff;
-    --primary-color: #1a1a1a;
-    --accent-color: #4a90e2;
-    --text-primary: #222222;
-    --text-secondary: #777777;
-    --border-radius: 8px;
-    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
   .product-card {
     background-color: var(--card-background);
     border-radius: var(--border-radius);

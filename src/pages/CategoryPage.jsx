@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getGamesByGenre } from '../api/rawg'
+import { getGamesByIds } from '../api/rawg'
+import curatedGames from '../data/curatedGames'
 import ProductCard from '../components/ProductCard'
 
 const CategoryPage = () => {
@@ -13,8 +14,9 @@ const CategoryPage = () => {
     useEffect(() => {
         const fetchGames = async () => {
             try {
-                setLoading(true)
-                const results = await getGamesByGenre(genre)
+                setLoading(true) 
+                const ids = curatedGames[genre]?.ids ?? []
+                const results = await getGamesByIds(ids)
                 setGames(results)
             } catch(err) {
                 setError('Failed to load games')
@@ -36,6 +38,7 @@ const CategoryPage = () => {
                     <ProductCard
                         key={game.id}
                         game={game}
+                        price={curatedGames[genre].prices[game.id]}
                     />
                 ))}
             </div>

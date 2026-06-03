@@ -1,4 +1,4 @@
-.category-page {
+.category-page, .home-page {
     padding: 24px;
 }
 
@@ -12,4 +12,58 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
+}
+
+.hero {
+    text-align: center;
+    padding: 48px 24px;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.genre-grid h2 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.genre-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.genre-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 24px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.genre-card:hover {
+    transform: translate(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.genre-card h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.genre-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
