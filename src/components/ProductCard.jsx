@@ -1,7 +1,15 @@
+import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 
 const ProductCard = ({ game , price}) => {
     const { addToCart } = useCart()
+    const [added, setAdded] = useState(false)
+
+    const handleAddToCart = () => {
+        addToCart(game, price)
+        setAdded(true)
+        setTimeout(() => setAdded(false), 1500)
+    }
 
     return (
         <div className='product-card'>
@@ -12,7 +20,9 @@ const ProductCard = ({ game , price}) => {
                 <p>Metacritic: {game.metacritic}</p>
                 <p>Release Date: {game.released}</p>
                 <p>${price}</p>
-                <button onClick={() => addToCart(game, price)} className='add-to-cart-btn'>Add to Cart</button>
+                <button onClick={handleAddToCart} className='add-to-cart-btn'>
+                    {added ? 'Added!' : 'Add to Cart'}
+                </button>
             </div>
         </div>
     )
