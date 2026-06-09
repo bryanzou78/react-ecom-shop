@@ -1,4 +1,4 @@
-  .product-card {
+.product-card {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -10,19 +10,55 @@
     width: 100%;
     height: 160px;
     object-fit: cover;
-  }
+}
 
-  .product-card-info {
-    padding: 12px;
-  }
+.product-card-info {
+  padding: 12px;
+}
 
-  .product-card-info h3{
-    color: var(--text-primary);
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-  }
+.product-card-info h3{
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
 
-  .product-card-info p {
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-  }
+.product-card-info p {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background-color: var(--card-background);
+  box-shadow: var(--box-shadow);
+}
+
+.header a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.header nav a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.85;
+}
