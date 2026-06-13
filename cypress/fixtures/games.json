@@ -1,0 +1,8 @@
+{
+    "id": 1,
+    "name": "Hades",
+    "background_image": "https://example.com/hades.jpg",
+    "rating": 4.7,
+    "metacritic": 93,
+    "released": "2020-09-17"
+}
