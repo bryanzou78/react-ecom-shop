@@ -1,0 +1,15 @@
+describe('AddToCartFlow', () => {
+    it('navigating to category page and adding to cart works and shows proper total', () => {
+        cy.visit('/')
+        cy.intercept('GET', '**/games/*', { fixture: 'games.json' }).as('getGames')
+        cy.contains('a', 'Action').click()
+        cy.wait('@getGames')
+        cy.location('pathname')
+            .should('eq', '/category/action')
+        cy.contains('button', 'Add to Cart').click()
+        cy.contains('a', 'Cart').click()
+        cy.location('pathname')
+            .should('eq', '/cart')
+        cy.contains('Hades')
+    })
+})

@@ -6,7 +6,7 @@ const CartPage = () => {
 
     if (cartItems.length === 0) {
         return (
-            <div>
+            <div className='empty-cart-message'>
                 <p>Your cart is empty</p>
                 <Link to='/'>Browse games</Link>
             </div>
