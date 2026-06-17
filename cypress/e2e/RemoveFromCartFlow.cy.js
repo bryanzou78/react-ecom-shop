@@ -1,5 +1,5 @@
-describe('AddToCartFlow', () => {
-    it('navigating to category page and adding to cart works and shows proper total', () => {
+describe('RemoveFromCartFlow', () => {
+    it('removing from cart works', () => {
         cy.visit('/')
         cy.intercept('GET', '**/games/*', { fixture: 'games.json' }).as('getGames')
         cy.contains('a', 'Action').click()
@@ -11,9 +11,7 @@ describe('AddToCartFlow', () => {
         cy.location('pathname')
             .should('eq', '/cart')
         cy.contains('Hades')
-        cy.get('body').then(($body) => {
-            cy.log($body.text())
-            })
-        cy.contains('$39.99')
+        cy.contains('button', 'Remove').click()
+        cy.contains('Your cart is empty')
     })
 })
