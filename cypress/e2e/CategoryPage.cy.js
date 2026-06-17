@@ -20,4 +20,16 @@ describe('CategoryPage', () => {
         cy.get('.product-card')
             .should('have.length', 12)
     })
+
+    it('displays game details on product card', () => {
+        cy.intercept('GET', '**/games/*', { fixture: 'games.json' }).as('getGames')
+        cy.visit('/category/action')
+        cy.wait('@getGames')
+        cy.get('.product-card').first().within(() => {
+            cy.contains('Hades')
+            cy.contains('Rating: 4.7')
+            cy.contains('Metacritic: 93')
+            cy.contains('Release Date: 2020-09-17')
+        })
+    })
 })
