@@ -1,8 +1,29 @@
-# React + Vite
+# react-ecom-shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A game-focused ecommerce storefront built with React. Browse curated game catalogs by genre, add items to cart, and manage your cart — all with persistent state via React Context.
 
-Currently, two official plugins are available:
+**Live demo**: https://react-ecom-shop-rld8m1vok-bryanzou78s-projects.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Tech stack**: React, Vite, React Router, Context API, RAWG API
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## Testing
+
+**Unit/integration tests (Jest/RTL):**
+```bash
+npm test
+```
+Covers `ProductCard`, `CartPage`, and `CartContext` — 11 tests total.
+
+**End-to-end tests (Cypress):**
+```bash
+npx cypress run
+ELECTRON_DISABLE_GPU=1 npx cypress open  # GUI (WSL only)
+```
+Covers homepage, category page, and cart flows including network interception via `cy.intercept()` — 14 tests across 4 spec files.
