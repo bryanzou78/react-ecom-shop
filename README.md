@@ -1,5 +1,7 @@
 # react-ecom-shop
 
+![CI](https://github.com/bryanzou78/react-ecom-shop/actions/workflows/ci.yml/badge.svg)
+
 A game-focused ecommerce storefront built with React. Browse curated game catalogs by genre, add items to cart, and manage your cart — all with persistent state via React Context.
 
 **Live demo**: https://react-ecom-shop-rld8m1vok-bryanzou78s-projects.vercel.app/
